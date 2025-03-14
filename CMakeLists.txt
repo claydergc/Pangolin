@@ -85,6 +85,8 @@ if(BUILD_ASAN)
     ")
 endif()
 
+add_compile_options(-Wno-null-pointer-subtraction)
+
 if(CMAKE_COMPILER_IS_GNUCC OR CMAKE_C_COMPILER_ID MATCHES "Clang")
     add_compile_options(-Wall -Wextra -Werror)
     # error: ISO C++ prohibits anonymous structs
