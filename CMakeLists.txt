@@ -11,6 +11,7 @@ add_compile_options(-Wno-parentheses)
 add_compile_options(-Wno-null-pointer-arithmetic)
 add_compile_options(-Wno-null-pointer-subtraction)
 add_compile_options(-Werror=maybe-uninitialized)
+add_compile_options(-Wno-error=deprecated-copy)
 
 if(NOT CMAKE_CXX_STANDARD)
     set(CMAKE_CXX_STANDARD 17)
