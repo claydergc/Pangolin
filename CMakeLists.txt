@@ -6,6 +6,12 @@ set(PANGOLIN_VERSION_MINOR 9)
 set(PANGOLIN_VERSION_PATCH 3)
 set(PANGOLIN_VERSION ${PANGOLIN_VERSION_MAJOR}.${PANGOLIN_VERSION_MINOR}.${PANGOLIN_VERSION_PATCH})
 
+add_compile_options(-Wall -Wextra -Werror)
+add_compile_options(-Wno-parentheses)
+add_compile_options(-Wno-null-pointer-arithmetic)
+add_compile_options(-Wno-null-pointer-subtraction)
+add_compile_options(-Werror=maybe-uninitialized)
+
 if(NOT CMAKE_CXX_STANDARD)
     set(CMAKE_CXX_STANDARD 17)
     set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -84,12 +90,6 @@ if(BUILD_ASAN)
         -fsanitize=object-size \
     ")
 endif()
-
-add_compile_options(-Wall -Wextra -Werror)
-add_compile_options(-Wno-parentheses)
-add_compile_options(-Wno-null-pointer-arithmetic)
-add_compile_options(-Wno-null-pointer-subtraction)
-add_compile_options(-Werror=maybe-uninitialized)
 
 if(CMAKE_COMPILER_IS_GNUCC OR CMAKE_C_COMPILER_ID MATCHES "Clang")
     add_compile_options(-Wall -Wextra -Werror)
